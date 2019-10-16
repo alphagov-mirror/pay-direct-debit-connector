@@ -13,9 +13,8 @@ logging:
       threshold: ALL
       timeZone: UTC
       target: stdout
-      layout:
-        type: json
-        timestampFormat: "yyyy-MM-dd HH:mm:ss.SSS"
+      customFields:
+        label: "directdebit-connector"
     - type: sentry
       threshold: ERROR
       dsn: ${SENTRY_DSN}
