@@ -17,7 +17,7 @@ import static uk.gov.pay.logging.LoggingKeys.PROVIDER;
 public class LoggingMDCResponseFilter implements ContainerResponseFilter {
     @Override
     public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext) throws IOException {
-        List.of(GATEWAY_ACCOUNT_ID, PROVIDER, GATEWAY_ACCOUNT_TYPE, MANDATE_EXTERNAL_ID, PAYMENT_EXTERNAL_ID)
+        List.of(GATEWAY_ACCOUNT_ID, PROVIDER, GATEWAY_ACCOUNT_TYPE, MANDATE_EXTERNAL_ID, PAYMENT_EXTERNAL_ID, "token")
                 .forEach(MDC::remove);
     }
 }

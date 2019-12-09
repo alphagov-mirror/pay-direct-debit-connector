@@ -39,6 +39,9 @@ public class LoggingMDCRequestFilter implements ContainerRequestFilter {
 
         getPathParameterFromRequest("paymentExternalId", requestContext)
                 .ifPresent(mandateExternalId -> MDC.put(PAYMENT_EXTERNAL_ID, mandateExternalId));
+        
+        getPathParameterFromRequest("token", requestContext)
+                .ifPresent(token -> MDC.put("token", token));
     }
 
     private Optional<String> getPathParameterFromRequest(String parameterName, ContainerRequestContext requestContext) {
