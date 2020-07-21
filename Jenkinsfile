@@ -100,14 +100,6 @@ pipeline {
         deployEcs("directdebit-connector")
       }
     }
-    stage('Smoke Tests') {
-      when {
-        branch 'master'
-      }
-      steps {
-        runDirectDebitSmokeTest()
-      }
-    }
     stage('Pact Tag') {
       when {
         branch 'master'
